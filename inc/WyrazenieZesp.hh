@@ -29,7 +29,7 @@ struct WyrazenieZesp {
  */
 
 
-void Wyswietl(WyrazenieZesp  WyrZ);
+ostream & operator <<(ostream & wyj, WyrazenieZesp WyrZ);
 LZespolona Oblicz(WyrazenieZesp  WyrZ);
 
 #endif
