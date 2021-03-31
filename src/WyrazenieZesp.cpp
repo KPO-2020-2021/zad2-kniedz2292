@@ -5,7 +5,7 @@
  * Tu nalezy zdefiniowac funkcje, ktorych zapowiedzi znajduja sie
  * w pliku naglowkowym.
  */
-ostream & operator <<(ostream & wyj,WyrazenieZesp WyrZ))
+ostream & operator <<(ostream & wyj,WyrazenieZesp WyrZ)
 {
     wyj<<WyrZ.Arg1;
     switch(WyrZ.Op)
@@ -24,23 +24,24 @@ ostream & operator <<(ostream & wyj,WyrazenieZesp WyrZ))
         break;
     }
  wyj<<WyrZ.Arg1;
+ return wyj;
 }
-LZespolona Oblicz(WyrazenieZesp  WyrZ)
+LZespolona WyrazenieZesp::Oblicz()
 {
-    LZesplona wynik;
-    switch(WyrZ.Op)
+    LZespolona wynik;
+    switch( Op)
     {
         case Op_Dodaj:
-        wynik= WyrZ.Arg1+WyrZ.Arg2;
+        wynik=  Arg1+ Arg2;
         break;
                 case Op_Odejmij:
-        wynik= WyrZ.Arg1-WyrZ.Arg2;
+        wynik=  Arg1- Arg2;
         break;
                 case Op_Mnoz:
-        wynik= WyrZ.Arg1*WyrZ.Arg2;
+        wynik=  Arg1* Arg2;
         break;
                 case Op_Dziel:
-       wynik= WyrZ.Arg1/WyrZ.Arg2;
+       wynik=  Arg1/ Arg2;
         break;
     }
     return wynik;
